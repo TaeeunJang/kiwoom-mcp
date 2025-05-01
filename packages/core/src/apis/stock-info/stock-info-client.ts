@@ -21,14 +21,29 @@ export class StockInfoClient extends BaseApiClient {
   /**
    * 종목 기본 정보 조회
    * @param code 종목코드
+   * @param contYn 연속조회여부
+   * @param nextKey 연속조회키
    * @returns 종목 기본 정보
    */
-  async getStockBasicInfo(code: string): Promise<ApiResponse<StockBasicInfo>> {
-    logger.info(`종목 기본 정보 조회 요청: ${code}`);
+  async getStockBasicInfo(
+    code: string,
+    contYn?: string,
+    nextKey?: string
+  ): Promise<ApiResponse<StockBasicInfo>> {
+    logger.info(
+      `종목 기본 정보 조회 요청: ${code}, 연속조회: ${contYn || "N"}`
+    );
 
-    const headers = {
+    // 요청 헤더 설정
+    const headers: Record<string, string> = {
       "api-id": "ka10001", // TR명: 주식기본정보요청
     };
+
+    // 연속 조회 관련 헤더 설정
+    if (contYn === "Y" && nextKey) {
+      headers["cont-yn"] = contYn;
+      headers["next-key"] = nextKey;
+    }
 
     return this.post<StockBasicInfo>(
       "/api/dostk/stkinfo",

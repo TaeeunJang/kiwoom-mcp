@@ -21,6 +21,31 @@ export interface ApiResponse<T = any> {
    * 오류 정보
    */
   error?: string;
+
+  /**
+   * 응답 헤더 정보
+   */
+  headers?: ResponseHeaders;
+}
+
+/**
+ * API 응답 헤더 정보
+ */
+export interface ResponseHeaders {
+  /**
+   * 연속 조회 여부 (Y/N)
+   */
+  contYn?: string;
+
+  /**
+   * 연속 조회 키
+   */
+  nextKey?: string;
+
+  /**
+   * TR명
+   */
+  apiId?: string;
 }
 
 /**

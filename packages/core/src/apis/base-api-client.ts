@@ -1,8 +1,8 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import { ApiConfig, defaultConfig } from "../config";
 import { TokenManager } from "../auth/token-manager";
 import { logger } from "../utils/logger";
-import { ApiResponse } from "../types/api";
+import { ApiResponse, ResponseHeaders } from "../types/api";
 
 /**
  * 기본 API 클라이언트
@@ -57,6 +57,7 @@ export class BaseApiClient {
       return {
         success: true,
         data: response.data,
+        headers: this.extractResponseHeaders(response),
       };
     } catch (error) {
       return this.handleError(error, `GET ${endpoint}`);
@@ -81,6 +82,7 @@ export class BaseApiClient {
       return {
         success: true,
         data: response.data,
+        headers: this.extractResponseHeaders(response),
       };
     } catch (error) {
       return this.handleError(error, `POST ${endpoint}`);
@@ -105,6 +107,7 @@ export class BaseApiClient {
       return {
         success: true,
         data: response.data,
+        headers: this.extractResponseHeaders(response),
       };
     } catch (error) {
       return this.handleError(error, `PUT ${endpoint}`);
@@ -127,10 +130,34 @@ export class BaseApiClient {
       return {
         success: true,
         data: response.data,
+        headers: this.extractResponseHeaders(response),
       };
     } catch (error) {
       return this.handleError(error, `DELETE ${endpoint}`);
     }
+  }
+
+  /**
+   * 응답 헤더에서 필요한 정보 추출
+   * @param response Axios 응답 객체
+   * @returns 응답 헤더 정보
+   */
+  private extractResponseHeaders<T>(
+    response: AxiosResponse<T>
+  ): ResponseHeaders | undefined {
+    const contYn = response.headers["cont-yn"];
+    const nextKey = response.headers["next-key"];
+    const apiId = response.headers["api-id"];
+
+    if (!contYn && !nextKey && !apiId) {
+      return undefined;
+    }
+
+    return {
+      contYn,
+      nextKey,
+      apiId,
+    };
   }
 
   /**
