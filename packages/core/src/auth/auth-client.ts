@@ -76,6 +76,8 @@ export class AuthClient {
       logger.info("접근 토큰 폐기 요청");
 
       const response = await this.httpClient.post("/oauth2/revoke", {
+        appkey: this.config.appKey,
+        secretkey: this.config.secretKey,
         token,
       });
 
