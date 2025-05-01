@@ -1,12 +1,13 @@
 {
-  "name": "kiwoom-mcp",
+  "name": "kiwoom-mcp-root",
   "version": "1.0.0",
   "description": "키움증권 OpenAPI REST API 연동 MCP 서버",
-  "main": "src/index.js",
+  "private": true,
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "test": "jest"
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "start": "pnpm -r run start"
   },
   "keywords": [
     "kiwoom",
@@ -16,16 +17,11 @@
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^1.9.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "playwright": "^1.40.0",
-    "winston": "^3.11.0"
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=7.0.0"
   },
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "nodemon": "^3.0.1"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }
