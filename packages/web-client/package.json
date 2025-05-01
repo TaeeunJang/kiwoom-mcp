@@ -1,37 +1,38 @@
 {
   "name": "@kiwoom-mcp/web-client",
-  "version": "1.0.0",
-  "description": "키움증권 OpenAPI REST API 테스트용 웹 클라이언트",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "clean": "rimraf dist"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "kiwoom",
-    "openapi",
-    "rest-api",
-    "client"
-  ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "@kiwoom-mcp/core": "workspace:*",
-    "axios": "^1.9.0",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.4",
+    "@mui/x-date-pickers": "^8.2.0",
+    "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.4.0",
+    "date-fns": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.3",
-    "react-router-dom": "^6.20.1"
+    "react-router-dom": "^6.30.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "@vitejs/plugin-react": "^4.2.1",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10",
-    "vitest": "^1.1.0"
+    "@types/date-fns": "^2.5.3",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
   }
 }
