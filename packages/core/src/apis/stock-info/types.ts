@@ -141,13 +141,13 @@ export interface StockBasicInfo {
    * 250최고
    * 250일간 기록한 최고가
    */
-  _250hgst?: string;
+  "250hgst"?: string;
 
   /**
    * 250최저
    * 250일간 기록한 최저가
    */
-  _250lwst?: string;
+  "250lwst"?: string;
 
   /**
    * 고가
@@ -201,25 +201,25 @@ export interface StockBasicInfo {
    * 250최고가일
    * 250일 중 최고가를 기록한 날짜
    */
-  _250hgst_pric_dt?: string;
+  "250hgst_pric_dt"?: string;
 
   /**
    * 250최고가대비율
    * 현재가 대비 250일 최고가의 등락률
    */
-  _250hgst_pric_pre_rt?: string;
+  "250hgst_pric_pre_rt"?: string;
 
   /**
    * 250최저가일
    * 250일 중 최저가를 기록한 날짜
    */
-  _250lwst_pric_dt?: string;
+  "250lwst_pric_dt"?: string;
 
   /**
    * 250최저가대비율
    * 현재가 대비 250일 최저가의 등락률
    */
-  _250lwst_pric_pre_rt?: string;
+  "250lwst_pric_pre_rt"?: string;
 
   /**
    * 현재가
