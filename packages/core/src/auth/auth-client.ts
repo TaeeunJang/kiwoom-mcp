@@ -47,8 +47,6 @@ export class AuthClient {
         token: response.data.token,
         tokenType: response.data.token_type || "bearer",
         expiresAt: response.data.expires_dt,
-        returnCode: response.data.return_code,
-        returnMsg: response.data.return_msg,
       };
 
       logger.info("접근 토큰 발급 성공");

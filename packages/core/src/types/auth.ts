@@ -16,16 +16,6 @@ export interface AuthTokenData {
    * 만료 시간 (YYYYMMDDHHMMSS 형식)
    */
   expiresAt: string;
-
-  /**
-   * 반환 코드
-   */
-  returnCode: number;
-
-  /**
-   * 반환 메시지
-   */
-  returnMsg: string;
 }
 
 /**
