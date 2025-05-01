@@ -154,9 +154,9 @@ export class BaseApiClient {
     }
 
     return {
-      contYn,
-      nextKey,
-      apiId,
+      "cont-yn": contYn,
+      "next-key": nextKey,
+      "api-id": apiId,
     };
   }
 

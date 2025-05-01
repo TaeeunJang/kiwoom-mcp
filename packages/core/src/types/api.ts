@@ -34,18 +34,21 @@ export interface ApiResponse<T = any> {
 export interface ResponseHeaders {
   /**
    * 연속 조회 여부 (Y/N)
+   * 다음 데이터가 있을시 Y값 전달
    */
-  contYn?: string;
+  "cont-yn"?: string;
 
   /**
    * 연속 조회 키
+   * 다음 데이터가 있을시 다음 키값 전달
    */
-  nextKey?: string;
+  "next-key"?: string;
 
   /**
    * TR명
+   * API 요청에 사용된 TR 코드
    */
-  apiId?: string;
+  "api-id"?: string;
 }
 
 /**

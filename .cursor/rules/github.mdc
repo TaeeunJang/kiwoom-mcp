@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- 요청이 있을 때만 git add, git commit, git push 등 git 명령어를 사용해줘.
