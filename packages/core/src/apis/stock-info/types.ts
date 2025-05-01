@@ -5,27 +5,227 @@ export interface StockBasicInfo {
   /**
    * 종목코드
    */
-  code: string;
+  stkCd?: string;
 
   /**
    * 종목명
    */
-  name: string;
+  stkNm?: string;
 
   /**
-   * 시장구분
+   * 결산월
    */
-  marketType: string;
+  setlMm?: string;
 
   /**
-   * 업종
+   * 액면가
    */
-  sector?: string;
+  fav?: string;
 
   /**
-   * 상장주식수
+   * 자본금
    */
-  listedShares?: number;
+  cap?: string;
+
+  /**
+   * 상장주식
+   */
+  floStk?: string;
+
+  /**
+   * 신용비율
+   */
+  crdRt?: string;
+
+  /**
+   * 연중최고
+   */
+  oyrHgst?: string;
+
+  /**
+   * 연중최저
+   */
+  oyrLwst?: string;
+
+  /**
+   * 시가총액
+   */
+  mac?: string;
+
+  /**
+   * 시가총액비중
+   */
+  macWght?: string;
+
+  /**
+   * 외인소진률
+   */
+  forExhRt?: string;
+
+  /**
+   * 대용가
+   */
+  replPric?: string;
+
+  /**
+   * PER
+   */
+  per?: string;
+
+  /**
+   * EPS
+   */
+  eps?: string;
+
+  /**
+   * ROE
+   */
+  roe?: string;
+
+  /**
+   * PBR
+   */
+  pbr?: string;
+
+  /**
+   * EV
+   */
+  ev?: string;
+
+  /**
+   * BPS
+   */
+  bps?: string;
+
+  /**
+   * 매출액
+   */
+  saleAmt?: string;
+
+  /**
+   * 영업이익
+   */
+  busPro?: string;
+
+  /**
+   * 당기순이익
+   */
+  cupNga?: string;
+
+  /**
+   * 250최고
+   */
+  hgst250?: string;
+
+  /**
+   * 250최저
+   */
+  lwst250?: string;
+
+  /**
+   * 고가
+   */
+  highPric?: string;
+
+  /**
+   * 시가
+   */
+  openPric?: string;
+
+  /**
+   * 저가
+   */
+  lowPric?: string;
+
+  /**
+   * 상한가
+   */
+  uplPric?: string;
+
+  /**
+   * 하한가
+   */
+  lstPric?: string;
+
+  /**
+   * 기준가
+   */
+  basePric?: string;
+
+  /**
+   * 예상체결가
+   */
+  expCntrPric?: string;
+
+  /**
+   * 예상체결수량
+   */
+  expCntrQty?: string;
+
+  /**
+   * 250최고가일
+   */
+  hgstPricDt250?: string;
+
+  /**
+   * 250최고가대비율
+   */
+  hgstPricPreRt250?: string;
+
+  /**
+   * 250최저가일
+   */
+  lwstPricDt250?: string;
+
+  /**
+   * 250최저가대비율
+   */
+  lwstPricPreRt250?: string;
+
+  /**
+   * 현재가
+   */
+  curPrc?: string;
+
+  /**
+   * 대비기호
+   */
+  preSig?: string;
+
+  /**
+   * 전일대비
+   */
+  predPre?: string;
+
+  /**
+   * 등락율
+   */
+  fluRt?: string;
+
+  /**
+   * 거래량
+   */
+  trdeQty?: string;
+
+  /**
+   * 거래대비
+   */
+  trdePre?: string;
+
+  /**
+   * 액면가단위
+   */
+  favUnit?: string;
+
+  /**
+   * 유통주식
+   */
+  dstrStk?: string;
+
+  /**
+   * 유통비율
+   */
+  dstrRt?: string;
 }
 
 /**

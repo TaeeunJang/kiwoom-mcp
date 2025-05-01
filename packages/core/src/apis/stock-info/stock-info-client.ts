@@ -30,7 +30,18 @@ export class StockInfoClient extends BaseApiClient {
    */
   async getStockBasicInfo(code: string): Promise<ApiResponse<StockBasicInfo>> {
     logger.info(`종목 기본 정보 조회 요청: ${code}`);
-    return this.get<StockBasicInfo>("/stock/info/basic", { code });
+
+    const headers = {
+      "api-id": "ka10001", // TR명: 주식기본정보요청
+    };
+
+    return this.post<StockBasicInfo>(
+      "/api/dostk/stkinfo",
+      {
+        stk_cd: code, // 거래소별 종목코드 (예: KRX:005930)
+      },
+      { headers }
+    );
   }
 
   /**
