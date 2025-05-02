@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { ThemeProvider, CssBaseline } from "@mui/material";
-import { theme } from "./theme/theme";
 import MainLayout from "./layouts/MainLayout";
 import StockInfoPage from "./pages/StockInfoPage";
 import PricePage from "./pages/PricePage";
@@ -8,8 +6,7 @@ import ForeignInstitutionalPage from "./pages/ForeignInstitutionalPage";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <>
       {/* @ts-ignore */}
       <Routes>
         {/* @ts-ignore */}
@@ -25,7 +22,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </ThemeProvider>
+    </>
   );
 }
 
